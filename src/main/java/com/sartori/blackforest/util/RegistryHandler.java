@@ -4,8 +4,10 @@ import com.sartori.blackforest.BlackForest;
 import com.sartori.blackforest.blocks.BlockItemBase;
 import com.sartori.blackforest.blocks.mining.PolarisBlock;
 import com.sartori.blackforest.items.ItemBase;
+import com.sartori.blackforest.tools.BlackForestItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -27,4 +29,8 @@ public class RegistryHandler {
 
     // BLOCK ITEMS
     public static final RegistryObject<Item> POLARIS_BLOCK_ITEM = ITEMS.register("polaris_block", () -> new BlockItemBase(POLARIS_BLOCK.get()));
+
+    // TOOLS
+    public static final RegistryObject<SwordItem> POLARIS_SWORD = ITEMS.register("polaris_sword", () ->
+            new SwordItem(BlackForestItemTier.POLARIS, 2, -2.4F, new Item.Properties().group(BlackForest.TAB)));
 }

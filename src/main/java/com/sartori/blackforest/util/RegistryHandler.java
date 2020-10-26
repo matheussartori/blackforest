@@ -40,8 +40,8 @@ public class RegistryHandler {
             new ShovelItem(BlackForestItemTier.POLARIS, 0.5F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<AxeItem> POLARIS_AXE = ITEMS.register("polaris_axe", () ->
-            new AxeItem(BlackForestItemTier.POLARIS, 5F, -3.1F, new Item.Properties().group(BlackForest.TAB)));
+            new AxeItem(BlackForestItemTier.POLARIS, 4F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<HoeItem> POLARIS_HOE = ITEMS.register("polaris_hoe", () ->
-            new HoeItem(BlackForestItemTier.POLARIS, 0, -1.0F, new Item.Properties().group(BlackForest.TAB)));
+            new HoeItem(BlackForestItemTier.POLARIS, -4, 0.0F, new Item.Properties().group(BlackForest.TAB)));
 }

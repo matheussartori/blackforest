@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "blackforest:polaris_block"
+    }
+  ],
+  "result":
+  {
+    "item": "blackforest:polaris",
+    "count": 9
+  }
+}

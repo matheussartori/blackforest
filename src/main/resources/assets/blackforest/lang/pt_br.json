@@ -1,5 +1,7 @@
 {
   "itemGroup.blackforestTab": "Black Forest",
 
-  "item.blackforest.polaris": "Polaris"
+  "item.blackforest.polaris": "Polaris",
+
+  "block.blackforest.polaris_block": "Bloco de Polaris"
 }

@@ -5,5 +5,9 @@
 
   "block.blackforest.polaris_block": "Bloco de Polaris",
 
-  "item.blackforest.polaris_sword": "Espada de Polaris"
+  "item.blackforest.polaris_sword": "Espada de Polaris",
+  "item.blackforest.polaris_pickaxe": "Picareta de Polaris",
+  "item.blackforest.polaris_axe": "Machado de Polaris",
+  "item.blackforest.polaris_shovel": "Pá de Polaris",
+  "item.blackforest.polaris_hoe": "Enxada de Polaris"
 }

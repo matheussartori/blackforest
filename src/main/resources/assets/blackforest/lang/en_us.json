@@ -5,5 +5,9 @@
 
   "block.blackforest.polaris_block": "Block of Polaris",
 
-  "item.blackforest.polaris_sword": "Polaris Sword"
+  "item.blackforest.polaris_sword": "Polaris Sword",
+  "item.blackforest.polaris_pickaxe": "Polaris Pickaxe",
+  "item.blackforest.polaris_axe": "Polaris Axe",
+  "item.blackforest.polaris_shovel": "Polaris Shovel",
+  "item.blackforest.polaris_hoe": "Polaris Hoe"
 }

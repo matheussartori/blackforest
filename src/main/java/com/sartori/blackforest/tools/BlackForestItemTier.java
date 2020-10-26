@@ -7,7 +7,7 @@ import net.minecraft.item.crafting.Ingredient;
 import java.util.function.Supplier;
 
 public enum BlackForestItemTier implements IItemTier {
-    POLARIS(3, 1828, 8.2F, 4.0F, 11, () -> {
+    POLARIS(3, 1828, 8.2F, 4.25F, 11, () -> {
         return Ingredient.fromItems(RegistryHandler.POLARIS_SWORD.get());
     });
 

@@ -9,5 +9,10 @@
   "item.blackforest.polaris_pickaxe": "Polaris Pickaxe",
   "item.blackforest.polaris_axe": "Polaris Axe",
   "item.blackforest.polaris_shovel": "Polaris Shovel",
-  "item.blackforest.polaris_hoe": "Polaris Hoe"
+  "item.blackforest.polaris_hoe": "Polaris Hoe",
+
+  "item.blackforest.polaris_helmet": "Polaris Helmet",
+  "item.blackforest.polaris_chestplate": "Polaris Chestplate",
+  "item.blackforest.polaris_leggings": "Polaris Leggings",
+  "item.blackforest.polaris_boots": "Polaris Boots"
 }

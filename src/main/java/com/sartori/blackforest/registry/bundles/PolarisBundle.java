@@ -1,18 +1,20 @@
-package com.sartori.blackforest.util;
+package com.sartori.blackforest.registry.bundles;
 
 import com.sartori.blackforest.BlackForest;
+import com.sartori.blackforest.armor.ArmorTier;
 import com.sartori.blackforest.blocks.BlockItemBase;
 import com.sartori.blackforest.blocks.mining.PolarisBlock;
 import com.sartori.blackforest.items.ItemBase;
-import com.sartori.blackforest.tools.BlackForestItemTier;
+import com.sartori.blackforest.tools.ItemTier;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class RegistryHandler {
+public class PolarisBundle {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BlackForest.MOD_ID);
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BlackForest.MOD_ID);
 
@@ -20,6 +22,7 @@ public class RegistryHandler {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
+
     // ITEMS
     public static final RegistryObject<Item> POLARIS = ITEMS.register("polaris", ItemBase::new);
 
@@ -31,17 +34,30 @@ public class RegistryHandler {
 
     // TOOLS
     public static final RegistryObject<SwordItem> POLARIS_SWORD = ITEMS.register("polaris_sword", () ->
-            new SwordItem(BlackForestItemTier.POLARIS, 2, -2.4F, new Item.Properties().group(BlackForest.TAB)));
+            new SwordItem(ItemTier.POLARIS, 2, -2.4F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<PickaxeItem> POLARIS_PICKAXE = ITEMS.register("polaris_pickaxe", () ->
-            new PickaxeItem(BlackForestItemTier.POLARIS, 0, -2.8F, new Item.Properties().group(BlackForest.TAB)));
+            new PickaxeItem(ItemTier.POLARIS, 0, -2.8F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<ShovelItem> POLARIS_SHOVEL = ITEMS.register("polaris_shovel", () ->
-            new ShovelItem(BlackForestItemTier.POLARIS, 0.5F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
+            new ShovelItem(ItemTier.POLARIS, 0.5F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<AxeItem> POLARIS_AXE = ITEMS.register("polaris_axe", () ->
-            new AxeItem(BlackForestItemTier.POLARIS, 4F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
+            new AxeItem(ItemTier.POLARIS, 4F, -3.0F, new Item.Properties().group(BlackForest.TAB)));
 
     public static final RegistryObject<HoeItem> POLARIS_HOE = ITEMS.register("polaris_hoe", () ->
-            new HoeItem(BlackForestItemTier.POLARIS, -4, 0.0F, new Item.Properties().group(BlackForest.TAB)));
+            new HoeItem(ItemTier.POLARIS, -4, 0.0F, new Item.Properties().group(BlackForest.TAB)));
+
+    // ARMOR
+    public static final RegistryObject<ArmorItem> POLARIS_HELMET = ITEMS.register("polaris_helmet", () ->
+            new ArmorItem(ArmorTier.POLARIS, EquipmentSlotType.HEAD, new Item.Properties().group(BlackForest.TAB)));
+
+    public static final RegistryObject<ArmorItem> POLARIS_CHESTPLATE = ITEMS.register("polaris_chestplate", () ->
+            new ArmorItem(ArmorTier.POLARIS, EquipmentSlotType.CHEST, new Item.Properties().group(BlackForest.TAB)));
+
+    public static final RegistryObject<ArmorItem> POLARIS_LEGGINGS = ITEMS.register("polaris_leggings", () ->
+            new ArmorItem(ArmorTier.POLARIS, EquipmentSlotType.LEGS, new Item.Properties().group(BlackForest.TAB)));
+
+    public static final RegistryObject<ArmorItem> POLARIS_BOOTS = ITEMS.register("polaris_boots", () ->
+            new ArmorItem(ArmorTier.POLARIS, EquipmentSlotType.FEET, new Item.Properties().group(BlackForest.TAB)));
 }

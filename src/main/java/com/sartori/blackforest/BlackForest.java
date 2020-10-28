@@ -1,6 +1,7 @@
 package com.sartori.blackforest;
 
-import com.sartori.blackforest.util.RegistryHandler;
+import com.sartori.blackforest.registry.RegistryHandler;
+import com.sartori.blackforest.registry.bundles.PolarisBundle;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -16,8 +17,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.stream.Collectors;
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("blackforest")
 public class BlackForest
@@ -32,6 +31,7 @@ public class BlackForest
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         // Register blackforest items
+        PolarisBundle.init();
         RegistryHandler.init();
 
         // Register ourselves for server and other game events we are interested in
@@ -53,7 +53,7 @@ public class BlackForest
     public static final ItemGroup TAB = new ItemGroup("blackforestTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegistryHandler.POLARIS.get());
+            return new ItemStack(PolarisBundle.POLARIS.get());
         }
     };
 

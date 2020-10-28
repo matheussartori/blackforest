@@ -3,11 +3,16 @@
 
   "item.blackforest.polaris": "Polaris",
 
-  "block.blackforest.polaris_block": "Bloco de Polaris",
+  "block.blackforest.polaris_block": "Bloco de polaris",
 
-  "item.blackforest.polaris_sword": "Espada de Polaris",
-  "item.blackforest.polaris_pickaxe": "Picareta de Polaris",
-  "item.blackforest.polaris_axe": "Machado de Polaris",
-  "item.blackforest.polaris_shovel": "Pá de Polaris",
-  "item.blackforest.polaris_hoe": "Enxada de Polaris"
+  "item.blackforest.polaris_sword": "Espada de polaris",
+  "item.blackforest.polaris_pickaxe": "Picareta de polaris",
+  "item.blackforest.polaris_axe": "Machado de polaris",
+  "item.blackforest.polaris_shovel": "Pá de polaris",
+  "item.blackforest.polaris_hoe": "Enxada de polaris",
+
+  "item.blackforest.polaris_helmet": "Capacete de polaris",
+  "item.blackforest.polaris_chestplate": "Peitoral de polaris",
+  "item.blackforest.polaris_leggings": "Calças de polaris",
+  "item.blackforest.polaris_boots": "Botas de polaris"
 }

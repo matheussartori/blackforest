@@ -1,7 +1,7 @@
 package com.sartori.blackforest;
 
-import com.sartori.blackforest.registry.RegistryHandler;
 import com.sartori.blackforest.registry.bundles.PolarisBundle;
+import com.sartori.blackforest.registry.collections.FoodRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -32,7 +32,7 @@ public class BlackForest
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         // Register blackforest items
         PolarisBundle.init();
-        RegistryHandler.init();
+        FoodRegistry.init();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

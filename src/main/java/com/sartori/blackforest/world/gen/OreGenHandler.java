@@ -30,7 +30,7 @@ public class OreGenHandler {
                     break;
                 // WORLD GENERATION
                 default:
-                    genOre(biome, 15, 8, 5, 10, OreFeatureConfig.FillerBlockType.NATURAL_STONE, PolarisBundle.POLARIS_ORE.get().getDefaultState(), 6);
+                    genOre(biome, 10, 8, 5, 10, OreFeatureConfig.FillerBlockType.NATURAL_STONE, PolarisBundle.POLARIS_ORE.get().getDefaultState(), 6);
             }
 
         }

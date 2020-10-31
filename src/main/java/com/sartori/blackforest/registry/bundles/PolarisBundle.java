@@ -3,7 +3,8 @@ package com.sartori.blackforest.registry.bundles;
 import com.sartori.blackforest.BlackForest;
 import com.sartori.blackforest.armor.ArmorTier;
 import com.sartori.blackforest.blocks.BlockItemBase;
-import com.sartori.blackforest.blocks.mining.PolarisBlock;
+import com.sartori.blackforest.blocks.decoration.PolarisBlock;
+import com.sartori.blackforest.blocks.mining.PolarisOre;
 import com.sartori.blackforest.items.ItemBase;
 import com.sartori.blackforest.tools.ItemTier;
 import net.minecraft.block.Block;
@@ -28,9 +29,11 @@ public class PolarisBundle {
 
     // BLOCKS
     public static final RegistryObject<Block> POLARIS_BLOCK = BLOCKS.register("polaris_block", PolarisBlock::new);
+    public static final RegistryObject<Block> POLARIS_ORE = BLOCKS.register("polaris_ore", PolarisOre::new);
 
     // BLOCK ITEMS
     public static final RegistryObject<Item> POLARIS_BLOCK_ITEM = ITEMS.register("polaris_block", () -> new BlockItemBase(POLARIS_BLOCK.get()));
+    public static final RegistryObject<Item> POLARIS_ORE_ITEM = ITEMS.register("polaris_ore", () -> new BlockItemBase(POLARIS_ORE.get()));
 
     // TOOLS
     public static final RegistryObject<SwordItem> POLARIS_SWORD = ITEMS.register("polaris_sword", () ->

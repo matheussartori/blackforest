@@ -1,4 +1,4 @@
-package com.sartori.blackforest.blocks.mining;
+package com.sartori.blackforest.blocks.decoration;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -10,7 +10,7 @@ public class PolarisBlock extends Block {
         super(Block.Properties.create(Material.IRON)
                 .hardnessAndResistance(5.5f, 6.0f)
                 .sound(SoundType.METAL)
-                .harvestLevel(2) // 0 = wood, 1 = stone / gold, 2 = iron, 3 = diamond
+                .harvestLevel(1) // 0 = wood, 1 = stone / gold, 2 = iron, 3 = diamond
                 .harvestTool(ToolType.PICKAXE)
         );
     }

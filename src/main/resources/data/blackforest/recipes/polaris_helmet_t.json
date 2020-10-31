@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ppp",
+    "p p",
+    "   "
+  ],
+  "key": {
+    "p": {
+      "item": "blackforest:polaris"
+    }
+  },
+  "result": {
+    "item": "blackforest:polaris_helmet",
+    "count": 1
+  }
+}

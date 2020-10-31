@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " pp",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "p": {
+      "item": "blackforest:polaris"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "blackforest:polaris_hoe",
+    "count": 1
+  }
+}

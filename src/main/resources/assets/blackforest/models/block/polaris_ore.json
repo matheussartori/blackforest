@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "blackforest:blocks/polaris_ore"
+  }
+}

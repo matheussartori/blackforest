@@ -30,19 +30,11 @@
               "type": "minecraft:item",
               "functions": [
                 {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 1,
-                    "max": 3,
-                    "type": "minecraft:uniform"
-                  }
-                },
-                {
                   "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
                   "formula": "minecraft:uniform_bonus_count",
                   "parameters": {
-                    "bonusMultiplier": 2
+                    "bonusMultiplier": 1.2
                   }
                 }
               ],

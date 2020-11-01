@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "blackforest:block/cleanse_table" },
+    "facing=south": { "model": "blackforest:block/cleanse_table", "y":  180},
+    "facing=west": { "model": "blackforest:block/cleanse_table", "y":  270},
+    "facing=east": { "model": "blackforest:block/cleanse_table", "y":  90}
+  }
+}

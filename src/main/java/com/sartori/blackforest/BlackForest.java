@@ -1,5 +1,6 @@
 package com.sartori.blackforest;
 
+import com.sartori.blackforest.registry.RegistryHandler;
 import com.sartori.blackforest.registry.bundles.PolarisBundle;
 import com.sartori.blackforest.registry.collections.FoodRegistry;
 import net.minecraft.block.Block;
@@ -33,6 +34,7 @@ public class BlackForest
         // Register blackforest items
         PolarisBundle.init();
         FoodRegistry.init();
+        RegistryHandler.init();
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

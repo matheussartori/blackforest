@@ -1,5 +1,6 @@
 package com.sartori.blackforest;
 
+import com.sartori.blackforest.entities.tile.CustomTileEntities;
 import com.sartori.blackforest.registry.RegistryHandler;
 import com.sartori.blackforest.registry.bundles.PolarisBundle;
 import com.sartori.blackforest.registry.collections.FoodRegistry;
@@ -9,6 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -32,9 +34,11 @@ public class BlackForest
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         // Register blackforest items
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         PolarisBundle.init();
         FoodRegistry.init();
         RegistryHandler.init();
+        CustomTileEntities.TILE_ENTITIES.register(bus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

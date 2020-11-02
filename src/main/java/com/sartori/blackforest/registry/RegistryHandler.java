@@ -2,7 +2,7 @@ package com.sartori.blackforest.registry;
 
 import com.sartori.blackforest.BlackForest;
 import com.sartori.blackforest.blocks.BlockItemBase;
-import com.sartori.blackforest.blocks.functional.CleanseTable;
+import com.sartori.blackforest.blocks.machines.CleanseTable;
 import net.minecraft.block.Block;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;

@@ -1,18 +1,26 @@
-package com.sartori.blackforest.blocks.functional;
+package com.sartori.blackforest.blocks.machines;
 
+import com.sartori.blackforest.entities.tile.machines.TileEntityCleanseTable;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
@@ -94,6 +102,26 @@ public class CleanseTable extends Block {
                 .harvestTool(ToolType.PICKAXE));
     }
 
+    /**
+     * Called throughout the code as a replacement for block instanceof BlockContainer
+     * Moving this to the Block base class allows for mods that wish to extend vanilla
+     * blocks, and also want to have a tile entity on that block, may.
+     * <p>
+     * Return true from this function to specify this block has a tile entity.
+     *
+     * @param state State of the current block
+     * @return True if block has a tile entity, false otherwise
+     */
+    @Override
+    public boolean hasTileEntity(BlockState state) {
+        return true;
+    }
+
+    @Override
+    public TileEntity createTileEntity(BlockState state, IBlockReader world) {
+        return new TileEntityCleanseTable();
+    }
+
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         switch(state.get(FACING)) {
@@ -116,28 +144,11 @@ public class CleanseTable extends Block {
         return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
     }
 
-    /**
-     * Returns the blockstate with the given rotation from the passed blockstate. If inapplicable, returns the passed
-     * blockstate.
-     *
-     * @param state
-     * @param rot
-     * @deprecated call via {@link IBlockState#withRotation(Rotation)} whenever possible. Implementing/overriding is
-     * fine.
-     */
     @Override
     public BlockState rotate(BlockState state, Rotation rot) {
         return state.with(FACING, rot.rotate(state.get(FACING)));
     }
 
-    /**
-     * Returns the blockstate with the given mirror of the passed blockstate. If inapplicable, returns the passed
-     * blockstate.
-     *
-     * @param state
-     * @param mirrorIn
-     * @deprecated call via {@link IBlockState#withMirror(Mirror)} whenever possible. Implementing/overriding is fine.
-     */
     @Override
     public BlockState mirror(BlockState state, Mirror mirrorIn) {
         return state.rotate(mirrorIn.toRotation(state.get(FACING)));
@@ -151,5 +162,17 @@ public class CleanseTable extends Block {
     @Override
     public float getAmbientOcclusionLightValue(BlockState state, IBlockReader worldIn, BlockPos pos) {
         return 0.6f;
+    }
+
+    @Override
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+
+        if (worldIn.getTileEntity(pos) instanceof TileEntityCleanseTable) {
+            TileEntityCleanseTable ce = (TileEntityCleanseTable) worldIn.getTileEntity(pos);
+            player.sendStatusMessage(new StringTextComponent("Counter : " + ce.getCounter()), true);
+            return ActionResultType.SUCCESS;
+        }
+
+        return ActionResultType.PASS;
     }
 }
